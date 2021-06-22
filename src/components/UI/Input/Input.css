@@ -1,0 +1,16 @@
+.Input input {
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    width: 100%;
+    outline: none;
+}
+
+.Input span {
+    color: #ff0000;
+    font-style: 12px;
+    font-weight: normal;
+}
+.Input.invalid label {
+    color: #ff0000;
+}
