@@ -110,13 +110,22 @@ export default class SearchResults extends Component {
                 <div>
                 <div className="alert alert-success d-flex align-items-center" role="alert">
                     <div className="d-flex align-items-center">
-                        Count of repos: <span className="badge rounded-pill badge bg-light text-dark align-middle ms-1">{this.state.totalRepo}</span> <span className="ms-2 me-2"> > </span>  
-                        Displayed on page: <span className="badge rounded-pill badge bg-light text-dark align-middle ms-1">{this.state.repos.length}</span> <span className="ms-2 me-2"> > </span>  
-                        Sort type: by <span className="badge rounded-pill badge bg-light text-dark align-middle ms-1">{this.state.sortCurrent}</span>
+                        <div className="row">
+                            <div className="col-auto">
+                                Count of repos: <span className="badge rounded-pill badge bg-light text-dark align-middle ms-1">{this.state.totalRepo}</span> 
+                            </div>
+                            <div className="col-auto">
+                                Displayed on page: <span className="badge rounded-pill badge bg-light text-dark align-middle ms-1">{this.state.repos.length}</span>  
+                            </div>
+                            <div className="col-auto">
+                                Sort type: by <span className="badge rounded-pill badge bg-light text-dark align-middle ms-1">{this.state.sortCurrent}</span>
+                            </div>
+                        </div>                    
+                        
                     </div>
                 </div>
                 <div className="row justify-content-end mt-4 mb-4">
-                    <div className="col-4">
+                    <div className="col-lg-4 col-md-6">
                         <Select
                         typeOfSortFunction={this.typeOfSortFunction.bind(this)}
                         sortCurrent={this.state.sortCurrent}
@@ -138,7 +147,7 @@ export default class SearchResults extends Component {
                     <tr key={repo.id} style={{verticalAlign: 'middle'}}>
                         <th scope="row"><img style={{maxWidth: '40px', maxHeight: '40px', borderRadius: '50%'}} src={repo.avatar_url} alt={repo.name} /></th>
                         <td><span className="badge bg-light text-dark fs-6">{repo.name}</span></td>
-                        <td><a href={'/repository/'+ repo.full_name} className="btn btn-secondary fs-7" tabIndex="-1" role="button" aria-disabled="true">view more</a></td>
+                        <td><a href={'/repository/'+ repo.full_name} className="btn btn-secondary fs-6" tabIndex="-1" role="button" aria-disabled="true">view more</a></td>
                         <td>{repo.stars}</td>
                         <td>
                         <button 

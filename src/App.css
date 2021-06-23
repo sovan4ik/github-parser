@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@media (max-width: 480px) {
+  .fs-6,
+  table {
+    font-size: 12px !important;
+  }
+}
